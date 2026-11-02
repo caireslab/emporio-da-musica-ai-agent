@@ -1,0 +1,18 @@
+services:
+  emporio-cli:
+    build: .
+    container_name: emporio-musica-cli
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    command: ["python", "main.py"]
+
+  emporio-web:
+    build: .
+    container_name: emporio-musica-web
+    env_file:
+      - .env
+    ports:
+      - "8501:8501"
+    command: ["streamlit", "run", "app.py", "--server.address=0.0.0.0", "--server.port=8501"]
