@@ -6,7 +6,7 @@
 
 ## 1. Contexto do Produto & Roteamento de Ciclo (SDLC)
 * **Sistema:** Emporio da Musica AI Agent — Agente conversacional de atendimento ao cliente para a loja de instrumentos musicais Emporio da Musica (Desafio Tecnico AI Engineer - Artefact)
-* **Estágio Atual do SDLC:** <!-- SDLC_PHASE_STATUS_START -->`Fase 02 — Requirements & Specification`<!-- SDLC_PHASE_STATUS_END -->
+* **Estágio Atual do SDLC:** <!-- SDLC_PHASE_STATUS_START -->`Fase 02.5 — Solution Design & UI/UX`<!-- SDLC_PHASE_STATUS_END -->
 * **Matriz de Classificação & Roteamento de Demandas (Auto-Routing):**
 
 | Tipo (Intent) | Palavras-Chave / Gatilho | Target SDLC Skill / Workflow | Comportamento Esperado neste Repositório |
@@ -28,8 +28,8 @@ Carregue via `read_file` **apenas** o artefato exigido pela tarefa ativa (nunca 
 | Fase / Gate | Artefato Mestre | Status |
 | :--- | :--- | :--- |
 | **Gate 01 (Discovery)** | `docs/discovery/PRODUCT_DISCOVERY_VISION.md` | ✅ Consolidado |
-| **Gate 02 (Requirements)** | `docs/requirements/SRS_SOFTWARE_REQUIREMENTS_SPECIFICATION.md` | 🔄 Em Andamento |
-| **Gate 02.5 (UI/UX & Tokens)** | `docs/design/UXD_USER_EXPERIENCE_DESIGN_SPECIFICATION.md` | ⏳ Pendente |
+| **Gate 02 (Requirements)** | `docs/requirements/SRS_SOFTWARE_REQUIREMENTS_SPECIFICATION.md` | ✅ Consolidado |
+| **Gate 02.5 (UI/UX & Tokens)** | `docs/design/UXD_USER_EXPERIENCE_DESIGN_SPECIFICATION.md` | 🔄 Em Andamento |
 | **Gate 03 (Architecture)** | `docs/architecture/SAD_SOLUTION_ARCHITECTURE_DOCUMENT.md` | ⏳ Pendente |
 | **Gate 04 (Development)** | `docs/development/WSI_WORKING_SOFTWARE_INCREMENT.md` | ⏳ Pendente |
 | **Gate 05 (Validation)** | `docs/validation/QVR_QUALITY_VALIDATION_REPORT.md` | ⏳ Pendente |
