@@ -6,16 +6,55 @@
 
 ---
 
+## 👨‍💻 Nota do Autor (Raul Caires) — Engenharia de Software Orientada a Agentes (Agentic SDLC + Human-in-the-Loop)
+
+Olá! Eu sou o **Raul Caires** e quero abrir este repositório compartilhando um diferencial central de engenharia: **este projeto foi 100% desenvolvido através de uma Pipeline Agêntica de SDLC (Software Development Life Cycle) que eu projetei e arquitetei**, operando em conjunto comigo no modelo **Human-in-the-Loop (HITL)**.
+
+Em vez de utilizar IA de forma ad-hoc ("vibe coding" ou geração de código prematuro sem contexto), dediquei meus esforços de engenharia para **construir a própria esteira autônoma de desenvolvimento** — um sistema multi-estágio composto por **Skills Orquestradoras, Sub-Skills modulares, Contratos Operacionais determinísticos (`GEMINI.md`), Ferramentas (MCPs/CLI), Guardrails de Qualidade e Evals**. Durante a construção deste desafio, **meu papel foi majoritariamente atuar como Staff/Principal Engineer na validação estratégica e aprovação das tomadas de decisão (Stage Gates)**, enquanto a minha pipeline agêntica executava a varredura de dados, modelagem de requisitos, arquitetura C4, codificação limpa, testes e auditoria de segurança.
+
+### ⚙️ Como Funciona a Minha Pipeline Agêntica SDLC
+
+A arquitetura de governança que criei transforma o ciclo de engenharia de software em uma **Máquina de Estados Finitos (FSM)** rigorosa, dividida em **7 Fases e Portões de Decisão (Stage Gates)**:
+
+```mermaid
+flowchart LR
+    G0["Bootstrap (GEMINI.md)"] --> G1["01. Discovery (PDV)"]
+    G1 -->|Gate 01 HITL| G2["02. Requirements (SRS + BDD)"]
+    G2 -->|Gate 02 HITL| G25["02.5 Solution Design (UXD)"]
+    G25 -->|Gate 02.5 HITL| G3["03. Architecture (SAD + C4 + ADRs)"]
+    G3 -->|Gate 03 HITL| G4["04. Development (WSI + Clean Code)"]
+    G4 -->|Gate 04 HITL| G5["05. Validation & QA (QVR + Evals)"]
+    G5 -->|Gate 05 HITL| G6["06. Release & Ops (PRER + v1.0.0)"]
+```
+
+1. **Regra de Ouro — *Zero Premature Code* (Proibição de Código Prematuro):**
+   - A pipeline possui uma trava física e contratual (`GEMINI.md`) que **proíbe terminantemente qualquer agente de criar arquivos `.py`, `.ts` ou `.js` antes da aprovação formal do Gate 03 (Arquitetura)**. Isso força o sistema a investigar profundamente os dados brutos (`data/*.csv` e `políticas_da_loja.pdf`), descobrir anomalias ocultas e especificar cenários BDD antes de escrever a primeira linha de código.
+2. **Orquestração Hierárquica de Agentes, Skills e *Progressive Disclosure*:**
+   - Criei **9 Skills Especializadas** (`sdlc-01-discovery`, `sdlc-02-requirements`, `sdlc-02.5-solution-design`, `sdlc-03-architecture`, `sdlc-04-development`, `sdlc-05-validation`, `sdlc-06-evolution`, `langgraph-dev` e `deepeval`), onde cada orquestrador mestre aciona **4 a 5 sub-agentes/sub-rotinas** sob demanda (*Progressive Disclosure*). Isso evita poluição da janela de contexto e garante profundidade especialista em cada disciplina (Produto, Engenharia de Requisitos ISO/IEC 25010, UX/WCAG 2.2 AA, Arquitetura C4/OWASP, Desenvolvimento LangGraph, QA/Evals e SRE/Release).
+3. **Postura *Anti-Sycophancy* & Sabatina Socrática (`/grill-me` + HITL):**
+   - Configurei os agentes para nunca atuarem como meros "Yes-Men". A cada sub-etapa e em cada transição de fase, a pipeline interrompe a execução e me submete a **checkpoints interativos de decisão** (sempre apresentando trade-offs e a recomendação técnica fundamentada). Nenhum Gate avança sem a minha validação e aprovação explícita.
+4. **Ecossistema de Tools, Linters Determinísticos e Guardrails:**
+   - **Bootstrap & Sync Determinístico (`sdlc_workspace_bootstrap.py`):** Script em Python que criei para gerenciar o estado do contrato operacional [`GEMINI.md`](file:///c:/Users/Raul%20Caires/Documents/Desafio%20tecnico/Desafio%20Técnico%20AI%20Engineer/GEMINI.md) e auditar violações de fronteira de camadas.
+   - **Validador Estático de Grafos (`validate_graph.py`):** Linter AST customizado na skill `langgraph-dev` que inspeciona o código do `StateGraph` em busca de anti-patterns (mutação de estado sem reducer `add_messages`, loops infinitos sem `recursion_limit` ou ausência de checkpointer).
+   - **Tooling & MCPs Integrados:** Uso obrigatório de pesquisa técnica em fontes oficiais (`search_web`), execução empírica no terminal (`run_command` com `pytest --cov=src` e `ruff`), versionamento incremental via Git/GitHub e conteinerização via Docker.
+5. **Evals, Qualidade e Segurança Ativa (OWASP LLM Top 10):**
+   - A esteira exige **100% de aprovação nos testes mapeados a partir dos cenários BDD**, piso mínimo de **80% de cobertura de código** (atingimos **88.39%**), **tolerância zero a erros de linter (`ruff`)**, benchmark real de latência (`0,11 ms/op` em memória) e validação de fidelidade factual (*Faithfulness* / *Zero Hallucination*) e segurança contra *Prompt Injection* (`LLM01`) e vazamento de dados pessoais LGPD em homônimos (`LLM02`).
+
+> 💡 **Por que destacar isso?** Porque acredito que o papel do **AI Engineer moderno** não é apenas construir um agente isolado para o cliente final, mas também **engenheirar sistemas agênticos reprodutíveis, auditáveis e governados** capazes de multiplicar a velocidade e o rigor técnico de toda a engenharia de software. Todo o rastro documental gerado por essa esteira está disponível na pasta [`docs/`](file:///c:/Users/Raul%20Caires/Documents/Desafio%20tecnico/Desafio%20Técnico%20AI%20Engineer/docs) e no histórico de commits deste repositório!
+
+---
+
 ## 📋 Índice
 
-1. [Visão Geral da Solução](#-1-visão-geral-da-solução)
-2. [Instruções de Configuração e Execução](#-2-instruções-de-configuração-e-execução)
-3. [Justificativa das Decisões Técnicas](#-3-justificativa-das-decisões-técnicas)
-4. [Auditoria, Sanitização e Tratamento de Anomalias nos Dados (`data/`)](#-4-auditoria-sanitização-e-tratamento-de-anomalias-nos-dados-data)
-5. [Exemplos de Interação (Cenários do Desafio e Multi-Turn)](#-5-exemplos-de-interação-cenários-do-desafio-e-multi-turn)
-6. [Qualidade, Testes Automatizados e Governança SDLC](#-6-qualidade-testes-automatizados-e-governança-sdlc)
-7. [Limitações Conhecidas e Roadmap de Evolução](#-7-limitações-conhecidas-e-roadmap-de-evolução)
-8. [Transparência no Uso de Assistentes de IA](#-8-transparência-no-uso-de-assistentes-de-ia)
+1. [Nota do Autor (Raul Caires) — Engenharia de Software Orientada a Agentes](#-nota-do-autor-raul-caires--engenharia-de-software-orientada-a-agentes-agentic-sdlc--human-in-the-loop)
+2. [Visão Geral da Solução](#-1-visão-geral-da-solução)
+3. [Instruções de Configuração e Execução](#-2-instruções-de-configuração-e-execução)
+4. [Justificativa das Decisões Técnicas](#-3-justificativa-das-decisões-técnicas)
+5. [Auditoria, Sanitização e Tratamento de Anomalias nos Dados (`data/`)](#-4-auditoria-sanitização-e-tratamento-de-anomalias-nos-dados-data)
+6. [Exemplos de Interação (Cenários do Desafio e Multi-Turn)](#-5-exemplos-de-interação-cenários-do-desafio-e-multi-turn)
+7. [Qualidade, Testes Automatizados e Governança SDLC](#-6-qualidade-testes-automatizados-e-governança-sdlc)
+8. [Limitações Conhecidas e Roadmap de Evolução](#-7-limitações-conhecidas-e-roadmap-de-evolução)
+9. [Transparência no Uso de Assistentes de IA](#-8-transparência-no-uso-de-assistentes-de-ia)
 
 ---
 
